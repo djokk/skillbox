@@ -43,7 +43,7 @@
       </fieldset>
       <fieldset class="form__block">
         <legend class="form__legend">Цвет</legend>
-        <ProductColor :colors.sync="colorData" :current-color.sync="currentColor"/>
+        <ProductColors :colors="colorData" :current-color.sync="currentColor"/>
       </fieldset>
       <fieldset class="form__block">
         <legend class="form__legend">Объемб в ГБ</legend>
@@ -124,7 +124,7 @@
 <script>
 import categories from '../data/categories';
 import colorData from '../data/colorData';
-import ProductColor from './ProductColor.vue';
+import ProductColors from './ProductColors.vue';
 
 export default {
   name: 'ProductFilter',
@@ -137,7 +137,7 @@ export default {
     };
   },
   components: {
-    ProductColor,
+    ProductColors,
   },
   props: ['priceFrom', 'priceTo', 'categoryId', 'colors'],
   computed: {

@@ -1,6 +1,6 @@
 <template>
   <ul class="catalog__list">
-    <ProductItems
+    <ProductItem
       v-for="product in products"
       :key="product.id"
       :product="product"
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ProductItems from './ProductItems.vue';
+import ProductItem from './ProductItem.vue';
 
 export default {
   name: 'ProductList',
@@ -19,7 +19,7 @@ export default {
     };
   },
   components: {
-    ProductItems,
+    ProductItem,
   },
 };
 </script>

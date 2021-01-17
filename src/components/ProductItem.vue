@@ -14,24 +14,25 @@
       {{ product.price | numberFormat}} ₽
     </span>
 
-    <ProductColor :colors.sync="product.colors" :current-color.sync="currentColor"/>
+    <ProductColors :colors="product.colors" :current-color.sync="productCurrentColor"/>
   </li>
 </template>
 
 <script>
 import gotoPage from '@/helpers/gotoPage';
 import numberFormat from '@/helpers/numberFormat';
-import ProductColor from './ProductColor.vue';
+import ProductColors from './ProductColors.vue';
 
 export default {
   name: 'ProductItem',
   data() {
     return {
+      productCurrentColor: this.product.colors[0].code,
     };
   },
   props: ['product', 'currentColor'],
   components: {
-    ProductColor,
+    ProductColors,
   },
   filters: {
     numberFormat,
